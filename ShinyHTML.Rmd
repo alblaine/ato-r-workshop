@@ -3,6 +3,7 @@ title: "Measuring Nile Flow"
 author: "Alison Blaine"
 date: "January 31, 2017"
 output: html_document
+runtime: shiny
 ---
 
 ## Summary
@@ -13,8 +14,14 @@ library(MASS)
 ```
 
 ## Data
-```{r fig.width=6, fig.height=5}
-plot(Nile)
-summary(Nile)
+```{r echo=FALSE}
+inputPanel(
+  selectInput("n_breaks", label= "Bins", c(10, 20, 30, 40), selected = 10)
+  
+)
+renderPlot({
+hist(Nile, xlab= "Measurement", probability = TRUE, breaks = as.numeric(input$n_breaks))
+})
+
 ```
 

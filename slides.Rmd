@@ -1,7 +1,7 @@
 ---
-title: "R for Document Creation"
-author: "Alison Blaine"
-date: "January 30, 2017"
+title: "R for Document Creation Workshop"
+author: "Alison Blaine, NCSU Libraries"
+date: "February 15, 2017"
 output: slidy_presentation
 ---
 
@@ -9,13 +9,13 @@ output: slidy_presentation
 knitr::opts_chunk$set(echo = FALSE, fig.width = 4, fig.height = 3)
 ```
 
-## R for Document Creation
+## Overview
 This workshop will provide an overview of how to create polished documents in multiple formats that incorporate R code chunks and are authored in the **RStudio** environment. 
 
 ![](https://www.r-project.org/Rlogo.png)
 
-## Goals
 
+## Goals
 Participants will learn...
 
 * The basics of RStudio and why it’s useful for creating documents using R
@@ -29,14 +29,13 @@ Participants will learn...
 
 
 ## RStudio
-
 R Studio is a free and open-source integrated development environment (IDE) for R, a programming language for statistical computing and graphics. This is the software we will be using to create our documents. 
 
 You must [install R](https://www.r-project.org/) before installing RStudio.
 
-## Required R packages
 
-* [rmarkdown](https://github.com/rstudio/rmarkdown) - R package that converts R Markdown documents into a variety of formats. Based on pandoc. Already included with RStudio.
+## Required R packages
+* rmarkdown - R package that converts R Markdown documents into a variety of formats. Based on pandoc. Already included with RStudio.
 * knitr - R package that generates dynamic reports. Combines a bunch of packages into one tool. Already included with RStudio.
 * pandoc - R package for converting documents from one markup format to another. Included in RStudio.
 * LaTeX (for PDFs) - software not included, must be installed separately. Typesetting system designed for the production of technical and scientific documentation.
@@ -45,7 +44,8 @@ You must [install R](https://www.r-project.org/) before installing RStudio.
 
 [More information](http://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown) about how these packages work together
 
-## Types of documents you create:
+
+## Document Types
 - HTML files / websites
 - PDF
 - Microsoft Word 
@@ -55,24 +55,24 @@ You must [install R](https://www.r-project.org/) before installing RStudio.
 - Journal articles
 - etc
 
-## Slide with Embedded Code
 
+## Embedded Code
+This is an example of the output of an embedded code chunk.
 ```{r mtcars, echo = TRUE}
-head(mtcars, 5)
+head(mtcars, 3)
 ```
 
-## Slide with Graph
 
-```{r fig.width=7, fig.height=5}
+## Visualizations
+```{r fig.width=5, fig.height=3}
 attach(mtcars)
 plot(wt, mpg, main="Scatterplot Example", 
   	xlab="Car Weight ", ylab="Miles Per Gallon ", pch=19)  
 ```
 
-## R Markdown
-R Markdown is a version of Markdown, a text markup tool, adapted for use in R. It's a simpler and more efficient markup language than HTML.
 
-An R Markdown file is just a text file saved as .Rmd. 
+## R Markdown
+R Markdown is a version of Markdown, a text markup tool, adapted for use in R. It's a simpler and more efficient markup language than HTML. 
 
 You can use a single R Markdown file to...
 
@@ -85,7 +85,6 @@ R Markdown documents are fully reproducible and support dozens of static and dyn
 
 
 ## How it works
-
 An R Markdown file is the file that you will use to create your document. 
 
 You can create this file in the RStudio editor, run it and generate the document using the Knit button.
@@ -98,6 +97,7 @@ A typical file has three components:
 - R code chunks
 - text
 
+
 ## Example R Markdown File
 ![](images/example.png)
 
@@ -107,7 +107,6 @@ R Markdown formatting tells the software how to format the text and whether to d
 
 
 ## Header 
-
 ![](images/header.png)
 
 Written in YAML, a format common for configuration files
@@ -119,12 +118,13 @@ html_document, pdf_document, word_document, md_document, ioslides_presentation, 
 
 You can change the output file format just by changing this one line of code.
 
-## Code chunks 
 
+## Code chunks 
 Make a code chunk with 3 backticks then {r}. 
 End chunk with 3 backticks:
 
 ![](images/chunk.png)
+
 
 ## Text
 Formatting text requires R Markdown notation. See R Markdown Reference Guide for more examples.
@@ -139,20 +139,20 @@ normal text
 
 [hyperlink example](http://www.ncsu.edu)
 
-## Markdown Tutorial
-
-This short exercise is to familiarize you with the basics of Markdown. 
-
-Complete lessons 1-10 at [www.markdown-tutorial.com](http://www.markdown-tutorial.com)
-
 
 ## Rendering your R Markdown file into a document
-
 Save your .Rmd file, and click the *"Knit"* button that appears above the file.
 
 You can set certain output options by clicking on the gear icon next to the Knit button.
 
 ![](images/render.png)
+
+
+## Markdown Tutorial
+This short exercise is to familiarize you with the basics of text formatting with Markdown. R Markdown uses these same text formatting rules.
+
+Complete lessons 1-10 at [www.markdown-tutorial.com](http://www.markdown-tutorial.com)
+
 
 ## Practice: Create an R Markdown file 
 output type: html_document
@@ -170,8 +170,8 @@ Instructions:
 9. Click "Knit Html" to see it render as an HTML file
 10. Change "Knit Html" using the dropdown to Knit to Word" to convert it to a Microsoft Word file
 
-## Chunk options
 
+## Chunk options
 Using chunk options, you can set rules for your code chunks. Use cases:
 
 * to specify the dimensions of a figure
@@ -181,8 +181,8 @@ Using chunk options, you can set rules for your code chunks. Use cases:
 
 See [R Markdown reference guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) for more examples! 
 
-## Example 1: 
 
+## Example 1 
 {r echo=TRUE}
 
 ```{r echo=TRUE}
@@ -190,8 +190,8 @@ plot(wt, mpg, main="Scatterplot Example",
   	xlab="Car Weight ", ylab="Miles Per Gallon ", pch=19)  
 ```
 
-## Example 2: 
 
+## Example 2 
 {r echo=FALSE}
 
 ```{r echo=FALSE}
@@ -199,8 +199,8 @@ plot(wt, mpg, main="Scatterplot Example",
   	xlab="Car Weight ", ylab="Miles Per Gallon ", pch=19)  
 ```
 
-## How to set global Chunk Options
 
+## How to set global Chunk Options
 These provide rules for all of the chunks in the document. 
 
 Example:
@@ -208,8 +208,8 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 4, fig.height = 3)
 
 ![](images/example.png)
 
-## Activity
 
+## Activity
 1. Knit HelloWorld.Rmd
 
 2. Change line 9 in your HelloWorld.Rmd file to the following:
@@ -228,8 +228,8 @@ knitr::opts_chunk$set(eval = FALSE)
 
 knitr::opts_chunk$set(collapse = TRUE)
 
-## Practice: Edit the text 
 
+## Edit the text 
 1. Delete boilerplate text and code chunks (lines 12 to the end)
 
 2. Give the document a new title: "Measuring Nile Flow" in the header
@@ -238,46 +238,48 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 Inside your code chunk should be two commands: 
 
-library(MASS)  #this loads the MASS library of sample datasets
+library(MASS)  # this loads the MASS library of sample datasets
 ``` {r}
 library(MASS)
 ```
 
-head(Nile) #shows the first row of the data set
+head(Nile) # shows the first row of the data set
 ``` {r}
 head(Nile)
 ```
 
-## Practice: Add a Plot
 
+## Add a Plot
 Add a plot below your head(Nile) code. 
 
 plot(Nile)
+
 ```{r}
 plot(Nile)
 ```
 
-## Practice: Resize the Plot
 
+## Resize the Plot
 {r fig.width=6, fig.height=5}
 
 plot(Nile)
+
 ```{r fig.width=6, fig.height=5}
 plot(Nile)
 ```
 
-## Add text to the document
 
+## Add text to the document
 This is a dataset of the annual flow (in $m^3$) of the Nile River at Aswan from 1871–1970.
 
 *To activate LaTeX typsetting, put dollar signs $ before and after m^3
 
-## Convert to Word Doc or PDF
 
+## Convert to Word Doc or PDF
 It's easy to convert your HTML file to a PDF or Word document. Simply click the dropdown arrow next to Knit to HTML and choose a different document type. 
 
-## Templates
 
+## Templates
 There are existing R Markdown templates for html files, slide shows and scholarly journal article formats, to name a few. 
 
 Examples:
@@ -286,12 +288,14 @@ Examples:
 
 * [rticles](https://github.com/rstudio/rticles) is an LaTeX academic journal R package. 
 
-To use a template, you must install the template package: 
+To use a template, you can install the template package: 
 
 install.packages("rticles", type = "source")
 
-## Opening a Template in RStudio
+Or, you can download a template .Rmd file and edit it in R Studio, such as this [scientific template](http://www.petrkeil.com/?p=2401).
 
+
+## Opening a Template from Installed Package in RStudio
 Once you have installed the rticles package: 
 
 File > New File > R Markdown... 
@@ -302,8 +306,8 @@ The window should populate with templates from the rticles package
 
 Note: a *full installation of LaTeX is required* for this to work. 
 
-## Convert Your Document to a Slide Presentation
 
+## Convert Your Document to a Slide Presentation
 Pandoc will allow you to convert your html file into a slide presentation. 
 
 Here are some slide presentation types you can create in RStudio: 
@@ -313,7 +317,10 @@ Here are some slide presentation types you can create in RStudio:
 * Beamer (PDF output) - requires a LaTex installation
 * RevealJS - requires installing the "revealjs" package
 
+
+## Example
 In the header of HelloWorld.Rmd, change output type to "slidy_presentation" and knit the document 
+
 
 ## Styling your Slides 
 
@@ -325,9 +332,22 @@ In the header of HelloWorld.Rmd, change output type to "slidy_presentation" and 
 
 For more information, see the [documentation](http://rmarkdown.rstudio.com/lesson-11.html)
 
-## Creating an interactive web application with Shiny
+
+## Creating a web application with Shiny
 
 Shiny is an R framework for creating interactive web applications.
 
-Shiny applications are usually two files 
+Shiny applications can be embedded into an R markdown file, or exist as stand-alone applications.
+
+Lots of tutorials exist for creating Shiny applications or Shiny widgets embedded in R Markdown documents. 
+
+Here are some good ones:
+
+* [Shiny R Studio tutorial](https://shiny.rstudio.com/articles/interactive-docs.html)
+* [How to Build a Shiny App](http://shiny.rstudio.com/tutorial/)
+* [How to Start with Shiny - Pt 1](https://www.rstudio.com/resources/webinars/how-to-start-with-shiny-part-1/)
+
+Try it: 
+File > New File > R Markdown > Shiny > Shiny Document 
+
 
