@@ -3,6 +3,7 @@ title: "R for Document Creation Workshop"
 author: "Alison Blaine, NCSU Libraries"
 date: "February 15, 2017"
 output: slidy_presentation
+runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
@@ -286,7 +287,7 @@ Examples:
 
 * [tufte](http://rstudio.github.io/tufte/) is a template for handouts in the style of Edward Tufte.
 
-* [rticles](https://github.com/rstudio/rticles) is an LaTeX academic journal R package. 
+* [rticles](https://github.com/rstudio/rticles) is a LaTeX academic journal R package. 
 
 To use a template, you can install the template package: 
 
@@ -324,7 +325,7 @@ In the header of HelloWorld.Rmd, change output type to "slidy_presentation" and 
 
 ## Styling your Slides 
 
-* You can add a CSS (Cascading Style Sheet) file to your project if you want to change the styling of your Slide presentation. 
+* You can add a [CSS (Cascading Style Sheet)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) file to your project if you want to change the styling of your Slide presentation. 
 * The CSS file must be included in your project directory and named in the header.
 ![](images/css.png)
 * You can also specify presentation size and text size in the header. 
@@ -334,7 +335,6 @@ For more information, see the [documentation](http://rmarkdown.rstudio.com/lesso
 
 
 ## Creating a web application with Shiny
-
 Shiny is an R framework for creating interactive web applications.
 
 Shiny applications can be embedded into an R markdown file, or exist as stand-alone applications.
@@ -347,7 +347,38 @@ Here are some good ones:
 * [How to Build a Shiny App](http://shiny.rstudio.com/tutorial/)
 * [How to Start with Shiny - Pt 1](https://www.rstudio.com/resources/webinars/how-to-start-with-shiny-part-1/)
 
-Try it: 
+## Open a Shiny Document 
 File > New File > R Markdown > Shiny > Shiny Document 
 
+Rather than a "knit" button, Shiny documents have "Run Document" buttons. Click this to render the document. 
 
+## Turn your HelloWorld.Rmd into a Shiny Document
+In your header...
+
+* set output to "html_document
+* add "runtime:shiny" 
+
+output: html_document
+
+runtime: shiny
+
+When you save the file, you'll notice that the "Run Document" button appears
+
+## Add Interactive Histogram
+After the line plot code, add this code to create an interactive histogram:
+
+![](images/shinycode.png)
+
+Run the document. The histogram will update when a new value is selected from the dropdown menu.
+
+## Histogram
+```{r}
+inputPanel(
+  selectInput("n_breaks", label= "Bins", c(10, 20, 30, 40), selected = 10)  #creates a dropdown selector
+)
+
+# create histogram
+renderPlot({
+hist(Nile, xlab= "Measurement", probability = TRUE, breaks = as.numeric(input$n_breaks)) 
+})
+```

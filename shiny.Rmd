@@ -15,13 +15,18 @@ library(MASS)
 
 ## Data
 ```{r echo=FALSE}
-inputPanel(
-  selectInput("n_breaks", label= "Bins", c(10, 20, 30, 40), selected = 10)
-  
-)
-renderPlot({
-hist(Nile, xlab= "Measurement", probability = TRUE, breaks = as.numeric(input$n_breaks))
-})
 
+# create line plot
+plot(Nile) 
+
+# create dropdown selector for histogram
+inputPanel(
+  selectInput("n_breaks", label= "Bins", c(10, 20, 30, 40), selected = 10)  #creates a dropdown selector
+)
+
+# create histogram
+renderPlot({
+hist(Nile, xlab= "Measurement", probability = TRUE, breaks = as.numeric(input$n_breaks)) 
+})
 ```
 
