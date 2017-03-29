@@ -114,7 +114,7 @@ Written in YAML, a format common for configuration files
 
 Title is whatever you want to title it
 
-output options (choose one): 
+**output options** (choose one): 
 html_document, pdf_document, word_document, md_document, ioslides_presentation, slidy_presentation, beamer_presentation
 
 You can change the output file format just by changing this one line of code.
