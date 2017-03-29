@@ -4,7 +4,7 @@ author: "Alison Blaine, NCSU Libraries"
 date: "March 31, 2017"
 output: 
   slidy_presentation:
-    css: styles.css
+    css: ['styles.css', 'https://fonts.googleapis.com/css?family=Open+Sans']
 runtime: shiny
 ---
 
@@ -212,13 +212,11 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 4, fig.height = 3)
 
 ## Activity
 1. Knit HelloWorld.Rmd
-
 2. Change line 9 in your HelloWorld.Rmd file to the following:
 
 **knitr::opts_chunk$set(echo = FALSE)**
 
 3. Knit the file. Examine the output. What has changed?
-
 4. Now Change line 9 to 
 
 **knitr::opts_chunk$set(eval = FALSE)**
@@ -232,23 +230,18 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 4, fig.height = 3)
 
 ## Edit the text 
 1. Delete boilerplate text and code chunks (lines 12 to the end)
-
 2. Give the document a new title: "Measuring Nile Flow" in the header
-
 3. Create an R code chunk
 
 Inside your code chunk should be two commands: 
 
-library(MASS)  # this loads the MASS library of sample datasets
-``` {r}
-library(MASS)
-```
 
-head(Nile) # shows the first row of the data set
-``` {r}
-head(Nile)
-```
+**library(MASS)**  # this loads the MASS library of sample datasets
 
+**head(Nile)** # shows the first row of the data set
+
+
+![](images/headnile.png)
 
 ## Add a Plot
 Add a plot below your head(Nile) code. 
@@ -299,14 +292,12 @@ Or, you can download a template .Rmd file and edit it in R Studio, such as this 
 ## Opening a Template from Installed Package in RStudio
 Once you have installed the rticles package: 
 
-File > New File > R Markdown... 
-
-Select "From Template"
+1. File > New File > R Markdown... 
+2. Select "From Template"
 
 The window should populate with templates from the rticles package
 
 Note: a *full installation of LaTeX is required* for this to work. 
-
 
 ## Convert Your Document to a Slide Presentation
 Pandoc will allow you to convert your html file into a slide presentation. 
@@ -326,19 +317,21 @@ In the header of HelloWorld.Rmd, change output type to "slidy_presentation" and 
 ## Styling your Slides 
 * You can add a [CSS (Cascading Style Sheet)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) file to your project if you want to change the styling of your Slide presentation. 
 * The CSS file must be included in your project directory and named in the header.
-![](images/css.png)
 * You can also specify presentation size and text size in the header. 
 * Beamer only renders slides in PDF. [Lots of themes](https://www.sharelatex.com/learn/Beamer#/Themes_and_colorthemes) are available.
+
+![](images/css.png)
+
 
 For more information, see the [documentation](http://rmarkdown.rstudio.com/lesson-11.html)
 
 
 ## Creating a web application with Shiny
-Shiny is an R framework for creating interactive web applications.
+* Shiny is an R framework for creating interactive web applications.
+* Shiny applications can be embedded into an R markdown file, or exist as stand-alone applications.
 
-Shiny applications can be embedded into an R markdown file, or exist as stand-alone applications.
+* Lots of tutorials exist for creating Shiny applications or Shiny widgets embedded in R Markdown documents. 
 
-Lots of tutorials exist for creating Shiny applications or Shiny widgets embedded in R Markdown documents. 
 
 Here are some good ones:
 
@@ -371,7 +364,7 @@ After the line plot code, add this code to create an interactive histogram:
 Run the document. The histogram will update when a new value is selected from the dropdown menu.
 
 ## Histogram
-```{r}
+```{r fig.width = 2}
 inputPanel(
   selectInput("n_breaks", label= "Bins", c(10, 20, 30, 40), selected = 10)  #creates a dropdown selector
 )
