@@ -3,9 +3,8 @@ title: "R for Document Creation Workshop"
 author: "Alison Blaine, NCSU Libraries"
 date: "March 31, 2017"
 output: 
-  slidy_presentation:
-    css: styles.css
-runtime: shiny
+  html_document:
+          css: styles.css
 ---
 
 ```{r setup, include=FALSE}
@@ -36,10 +35,10 @@ You must [install R](https://www.r-project.org/) before installing RStudio.
 
 
 ## Required R packages
-* **rmarkdown** - R package that converts R Markdown documents into a variety of formats. Based on pandoc. Already included with RStudio.
-* **knitr** - R package that generates dynamic reports. Combines a bunch of packages into one tool. Already included with RStudio.
-* **pandoc** - R package for converting documents from one markup format to another. Included in RStudio.
-* **LaTeX (for PDFs)** - software not included, must be installed separately. Typesetting system designed for the production of technical and scientific documentation.
+* rmarkdown - R package that converts R Markdown documents into a variety of formats. Based on pandoc. Already included with RStudio.
+* knitr - R package that generates dynamic reports. Combines a bunch of packages into one tool. Already included with RStudio.
+* pandoc - R package for converting documents from one markup format to another. Included in RStudio.
+* LaTeX (for PDFs) - software not included, must be installed separately. Typesetting system designed for the production of technical and scientific documentation.
     * MacTeX (Mac)
     * MiKTeX (Windows)
 
@@ -215,19 +214,19 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 4, fig.height = 3)
 
 2. Change line 9 in your HelloWorld.Rmd file to the following:
 
-**knitr::opts_chunk$set(echo = FALSE)**
+knitr::opts_chunk$set(echo = FALSE)
 
 3. Knit the file. Examine the output. What has changed?
 
 4. Now Change line 9 to 
 
-**knitr::opts_chunk$set(eval = FALSE)**
+knitr::opts_chunk$set(eval = FALSE)
 
 5. Knit the file. What has changed?
 
 6. Change line 9 to 
 
-**knitr::opts_chunk$set(collapse = TRUE)**
+knitr::opts_chunk$set(collapse = TRUE)
 
 
 ## Edit the text 
@@ -324,6 +323,7 @@ In the header of HelloWorld.Rmd, change output type to "slidy_presentation" and 
 
 
 ## Styling your Slides 
+
 * You can add a [CSS (Cascading Style Sheet)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) file to your project if you want to change the styling of your Slide presentation. 
 * The CSS file must be included in your project directory and named in the header.
 ![](images/css.png)
@@ -354,8 +354,8 @@ Rather than a "knit" button, Shiny documents have "Run Document" buttons. Click 
 ## Turn your HelloWorld.Rmd into a Shiny Document
 In your header...
 
-* set output to **html_document**
-* add **runtime:shiny**
+* set output to "html_document
+* add "runtime:shiny" 
 
 output: html_document
 
@@ -370,14 +370,3 @@ After the line plot code, add this code to create an interactive histogram:
 
 Run the document. The histogram will update when a new value is selected from the dropdown menu.
 
-## Histogram
-```{r}
-inputPanel(
-  selectInput("n_breaks", label= "Bins", c(10, 20, 30, 40), selected = 10)  #creates a dropdown selector
-)
-
-# create histogram
-renderPlot({
-hist(Nile, xlab= "Measurement", probability = TRUE, breaks = as.numeric(input$n_breaks)) 
-})
-```

@@ -68,7 +68,7 @@ h6 {
 }
 </style>
 
-<link href="data:text/css;charset=utf-8,%0Ahtml%2C%20body%20%7B%0Abackground%2Dcolor%3A%20%23e5efff%3B%0Afont%2Dfamily%3A%20%22Georgia%22%2Cserif%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
+<link href="data:text/css;charset=utf-8,%0Ahtml%2C%20body%20%7B%0Abackground%2Dcolor%3A%20%23e5efff%3B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -153,10 +153,10 @@ $(document).ready(function () {
 <div id="required-r-packages" class="section level2">
 <h2>Required R packages</h2>
 <ul>
-<li><strong>rmarkdown</strong> - R package that converts R Markdown documents into a variety of formats. Based on pandoc. Already included with RStudio.</li>
-<li><strong>knitr</strong> - R package that generates dynamic reports. Combines a bunch of packages into one tool. Already included with RStudio.</li>
-<li><strong>pandoc</strong> - R package for converting documents from one markup format to another. Included in RStudio.</li>
-<li><strong>LaTeX (for PDFs)</strong> - software not included, must be installed separately. Typesetting system designed for the production of technical and scientific documentation.
+<li>rmarkdown - R package that converts R Markdown documents into a variety of formats. Based on pandoc. Already included with RStudio.</li>
+<li>knitr - R package that generates dynamic reports. Combines a bunch of packages into one tool. Already included with RStudio.</li>
+<li>pandoc - R package for converting documents from one markup format to another. Included in RStudio.</li>
+<li>LaTeX (for PDFs) - software not included, must be installed separately. Typesetting system designed for the production of technical and scientific documentation.
 <ul>
 <li>MacTeX (Mac)</li>
 <li>MiKTeX (Windows)</li>
@@ -322,17 +322,17 @@ $(document).ready(function () {
 <li><p>Knit HelloWorld.Rmd</p></li>
 <li><p>Change line 9 in your HelloWorld.Rmd file to the following:</p></li>
 </ol>
-<p><strong>knitr::opts_chunk$set(echo = FALSE)</strong></p>
+<p>knitr::opts_chunk$set(echo = FALSE)</p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Knit the file. Examine the output. What has changed?</p></li>
 <li><p>Now Change line 9 to</p></li>
 </ol>
-<p><strong>knitr::opts_chunk$set(eval = FALSE)</strong></p>
+<p>knitr::opts_chunk$set(eval = FALSE)</p>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Knit the file. What has changed?</p></li>
 <li><p>Change line 9 to</p></li>
 </ol>
-<p><strong>knitr::opts_chunk$set(collapse = TRUE)</strong></p>
+<p>knitr::opts_chunk$set(collapse = TRUE)</p>
 </div>
 <div id="edit-the-text" class="section level2">
 <h2>Edit the text</h2>
@@ -433,8 +433,8 @@ $(document).ready(function () {
 <h2>Turn your HelloWorld.Rmd into a Shiny Document</h2>
 <p>In your header…</p>
 <ul>
-<li>set output to <strong>html_document</strong></li>
-<li>add <strong>runtime:shiny</strong></li>
+<li>set output to “html_document</li>
+<li>add “runtime:shiny”</li>
 </ul>
 <p>output: html_document</p>
 <p>runtime: shiny</p>
