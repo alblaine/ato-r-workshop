@@ -1,20 +1,20 @@
 ---
 title: "Measuring Nile Flow"
 author: "Alison Blaine"
-date: "January 31, 2017"
+date: "March 30, 2017"
 output: html_document
 ---
 
-## Summary
-This is a dataset of the annual flow (in $m^3$) of the Nile River at Aswan from 1871–1970.
-
-```{r echo=FALSE}
-library(MASS)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
 ```
-
-## Data
-```{r fig.width=6, fig.height=5}
-plot(Nile)
+### About the Data
+This is a dataset of the annual flow in $m^3$ of the Nile River at Aswan from 1871-1970. 
+```{r}
+library(MASS)
 summary(Nile)
 ```
 
+```{r fig.height=4, fig.width=3, echo=FALSE}
+plot(Nile)
+```

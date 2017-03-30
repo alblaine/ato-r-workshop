@@ -366,7 +366,7 @@ After the line plot code, add this code to create an interactive histogram:
 Run the document. The histogram will update when a new value is selected from the dropdown menu.
 
 ## Histogram
-```{r fig.width = 2}
+```{r}
 inputPanel(
   selectInput("n_breaks", label= "Bins", c(10, 20, 30, 40), selected = 10)  #creates a dropdown selector
 )
