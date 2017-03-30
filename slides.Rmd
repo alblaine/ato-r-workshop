@@ -263,12 +263,13 @@ plot(Nile)
 ## Add text to the document
 Add the following text above your r code chunk that creates the plot. This should be approximately line 12:
 
+![](images/addtext.png)
+
 ### About the Data
 This is a dataset of the annual flow (in $m^3$) of the Nile River at Aswan from 1871–1970.
 
 *To activate LaTeX typsetting, put dollar signs $ before and after m^3*
 
-![](images/addtext.png)
 
 ## Convert to Word Doc or PDF
 It's easy to convert your HTML file to a PDF or Word document. Simply click the dropdown arrow next to Knit to HTML and choose a different document type.
