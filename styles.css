@@ -1,7 +1,6 @@
 
 html, body {
-  background-color: #5d5d5e;
-  color: #fff;
+  background-color: #fff;
 }
 
 a:link {
@@ -9,35 +8,37 @@ a:link {
 }
 
 img {
-  max-width: 70%;
+  max-width: 80%;
+  margin: 0 auto;
 }
+
 h1 {
-	font-family: "Open Sans";
+	font-family: "Arial Black";
+	
+}
+h3 {
+	font-family: "Arial Black";
+	font-size: 33px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+}
+
+p {
+  color: #4B0082; ;
+}
+p li {
+	font-family: "Arial";
 	font-size: 28px;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: 500;
-	line-height: 26.4px;
-}
-h3 {
-	font-family: "Open Sans";
-	font-size: 24px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 15.4px;
-}
-p {
-	font-family: "Open Sans";
-	font-size: 18px;
-	font-style: normal;
-	font-variant: normal;
 	font-weight: 400;
-	line-height: 20px;
+	
+
 }
 blockquote {
 	font-family: "Open Sans";
-	font-size: 21px;
+	font-size: 28px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
@@ -45,7 +46,7 @@ blockquote {
 }
 pre {
 	font-family: "Open Sans";
-	font-size: 13px;
+	font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;

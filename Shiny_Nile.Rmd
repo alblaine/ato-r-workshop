@@ -1,0 +1,45 @@
+---
+title: "Measuring Nile Flow"
+author: "Your Name Here"
+date: "October 24, 2017"
+output: html_document
+runtime: shiny
+---
+<!-- this code chunk is for setting global chunk options. --> 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## About the Data
+This is a dataset of the annual flow in $m^3$ of the Nile River at Aswan from 1871-1970. 
+
+<!-- this code chunk loads in the MASS package of datasets and generates a summary of the Nile dataset in that package  --> 
+```{r}
+library(MASS)
+summary(Nile)
+```
+
+<!-- this code chunk generates a line plot  -->
+## Flow over Time
+```{r fig.height=5, fig.width=5, echo=FALSE}
+plot(Nile)
+```
+
+<!-- this code chunk generates an interactive histogram. Make sure to put runtime:shiny in the header!  -->
+
+## Distribution
+
+
+```{r fig.height=4, fig.width=3, echo=FALSE}
+
+# create dropdown selector for histogram
+inputPanel(
+  selectInput("n_breaks", label= "Bins", c(10, 20, 30, 40), selected = 10)  #creates a dropdown selector
+)
+
+# create histogram
+renderPlot({
+hist(Nile, xlab= "Measurement", probability = TRUE, breaks = as.numeric(input$n_breaks), col="deepskyblue3") 
+})
+```
+

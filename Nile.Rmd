@@ -1,0 +1,23 @@
+---
+title: "Measuring Nile Flow"
+author: "Your Name Here"
+date: "October 24, 2017"
+output: html_document
+---
+
+<!-- this code chunk is for setting global chunk options. --> 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## About the Data
+This is a dataset of the annual flow in $m^3$ of the Nile River at Aswan from 1871-1970. 
+
+<!-- this code chunk loads in the MASS package of datasets and generates a summary of the Nile dataset in that package  --> 
+```{r}
+library(MASS)
+summary(Nile)
+```
+
+<!-- add stuff here -->
+
