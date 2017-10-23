@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 4, fig.height = 3)
 
 ## Access to RStudio server 
 
-You should have a paper slip on your seat with a URL and login information to an RStudio server instance. 
+Make sure to get a paper slip with a URL and login information to an RStudio server instance. 
 
 ### **URL: check your slip**  
 #### **username: check your slip**
@@ -30,9 +30,8 @@ You should have a paper slip on your seat with a URL and login information to an
 ![](images/hill.png)
 
 * work at NCSU Libraries
-* Digital Library Initiatives - [github.com/ncsu-libraries](https://github.com/ncsu-libraries)
-* statistical computing, visualization & software projects
-* develop and teach workshops
+* Digital Library Initiatives:  [github.com/ncsu-libraries](https://github.com/ncsu-libraries)
+* consulting, teaching & coding 
 * we have lots of R Users who need to publish
 
 ## Old Model of a Research Document
@@ -357,7 +356,7 @@ output: pdf_document
 
 ## Overview of Nile.Rmd
 
-This is a dataset of the annual flow (in $m^3$) of the Nile River at Aswan from 1871–1970.
+This document is about the annual flow (in $m^3$) of the Nile River at Aswan from 1871–1970.
 
 Inside your code chunk should be two commands:
 
@@ -366,7 +365,7 @@ library(MASS)
 summary(Nile)
 ```
 
-`library(MASS)`  -loads the MASS library of sample datasets  
+`library(MASS)`  - loads the MASS library of sample datasets  
 `summary(Nile)` - shows the statistical summary of the data set
 
 ## Add a plot
