@@ -53,6 +53,13 @@ A document and its elements as static entities:
 
 * A document that could be its own web app, github page, or slide presentation.
 
+## Reproducibility 
+
+* other people can re-run your code
+* transparency for other researchers
+* files are dynamic
+* easy to share
+
 ## Wouldn't it be Cool if...
 
 You could use the same open-source tool for your data cleaning, analysis and publishing?
@@ -101,13 +108,6 @@ One .Rmd file --> many types of documents:
 - Journal articles
 
 image credit: [R Studio](http://rmarkdown.rstudio.com/)
-
-## Reproducibility 
-
-* other people can re-run your code
-* transparency for other researchers
-* files are dynamic
-* easy to share
 
 ## Versatility 
 
