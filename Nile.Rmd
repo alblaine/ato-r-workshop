@@ -20,4 +20,4 @@ summary(Nile)
 ```
 
 <!-- add stuff here -->
-
+## Graphs

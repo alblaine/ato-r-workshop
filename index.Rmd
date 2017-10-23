@@ -14,10 +14,10 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 4, fig.height = 3)
 ```
 
 
-## Warning 
-**This WILL be a hands-on workshop. Look for the hand!**  
+## Hands-On Session 
+**Look for the hand!**  
 
-![](images/Hand-Silhouette.png)
+![](images/hand.png)
 
 ## Access to RStudio server 
 
@@ -27,18 +27,15 @@ You should have a paper slip on your seat with a URL and login information to an
 #### **username: check your slip**
 #### **password: check your slip**  
 
-
-## Access to the Cheatsheet! 
-In RStudio, go to `Help > Cheatsheets > R Markdown Reference Guide`
-
 ## What is R? 
 
 R is a programming language for statistical computing and graphics. 
 
-* open-source
 * New Zealand
 * created by statisticians named **Ross** and **Robert** 
-* obscure thing --> now one of the most popular languages for data science
+* well, data science
+
+![](images/Rlogo.png)
 
 ## R Packages
 
@@ -51,15 +48,13 @@ Find packages at [RDocumentation.org](http://RDocumentation.org)
 ## R Studio {.smaller}
 ![](images/rstudio.png)
 
-## R packages for document creation
 
-* **pandoc** - converts documents from one markup format to another
-* **rmarkdown** - reads R Markdown. Already included with RStudio.
-* **knitr** - generates dynamic reports. Already included with RStudio.
-* **LaTeX (for PDFs)** - for Typesetting, useful for math notation and journal article formatting
-* **bookdown** - if you want to write books
+## What is R Markdown?
+**R Markdown** is a version of Markdown, a **text markup tool**, adapted for use in R. 
 
-[More information](http://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown) about how these packages work together
+R Markdown documents are fully reproducible and support dozens of static and dynamic output formats.
+
+![](images/example.png)
 
 ## R Markdown Lets Us Have Nice Things
 
@@ -77,8 +72,6 @@ One .Rmd file --> many types of documents:
 
 image credit: [R Studio](http://rmarkdown.rstudio.com/)
 
-[Examples from the R Markdown Gallery](http://rmarkdown.rstudio.com/gallery.html)
-
 ## Reproducibility 
 
 * other people can re-run your code
@@ -95,12 +88,15 @@ In an R Markdown file, you can include:
 * mathjax  
 * code chunks in other languages  
 
-## What is R Markdown?
-**R Markdown** is a version of Markdown, a **text markup tool**, adapted for use in R. 
+## R packages for document creation
 
-R Markdown documents are fully reproducible and support dozens of static and dynamic output formats.
+* **pandoc** - converts documents from one markup format to another
+* **rmarkdown** - reads R Markdown. Already included with RStudio.
+* **knitr** - generates dynamic reports. Already included with RStudio.
+* **LaTeX (for PDFs)** - for Typesetting, useful for math notation and journal article formatting
+* **bookdown** - if you want to write books
 
-![](images/example.png)
+[More information](http://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown) about how these packages work together
 
 ## How it works
 An R Markdown file (.Rmd) is the file that you will use to create your document.
@@ -128,11 +124,36 @@ Written in YAML, a format common for configuration files
 
 html_document, pdf_document, word_document, md_document, ioslides_presentation, slidy_presentation, beamer_presentation, revealjs_presentation (revealjs package must be installed)
 
+
+## Header Options: CSS
+* You can add a [CSS (Cascading Style Sheet)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) file to your project if you want to change the styling of your document.
+* The CSS file must be included in your project directory and named in the header.
+
+```
+ ---
+ title: "R Markdown for Publishing Documents"
+ output: 
+   slidy_presentation:
+      css: styles.css
+---
+```
+
+## Header Options: Table of Contents
+```
+---
+title: "R Markdown for Publishing Documents"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+```
 ## Code chunks
 Make a code chunk with 3 backticks then {r}.
 End chunk with 3 backticks:
 
-![](images/chunkoption.png)
+![](images/codechunk.png)
 
 ## Example
 
@@ -171,7 +192,6 @@ plot(wt, mpg, main="Scatterplot Example",
   	xlab="Car Weight ", ylab="Miles Per Gallon ", pch=19)  
 ```
 
-
 ## Global Chunk Options
 These provide rules for all of the chunks in the document.
 
@@ -191,15 +211,13 @@ normal text
 [hyperlink example](http://www.ncsu.edu)  
 
 
-
-## Knitting Your R Markdown File
+## Rendering Your R Markdown File
 
 Save your .Rmd file, and click the *"Knit"* button that appears above the file.
 
 You can set certain output options by clicking on the gear icon next to the Knit button.
 
 ![](images/render.png)
-
 
 
 ## Templates
@@ -227,14 +245,19 @@ Note: a *full installation of LaTeX is required* for this to work.
 
 ## Hands-On Part Begins 
 
-![](images/Hand-Silhouette.png)
+![](images/hand.png)
 
+## Log in to R Studio
 Use the paper slip on to log in to RStudio:
 
-### **URL: go.ncsu.edu/ato**  
+### **URL: check your slip**  
 #### **username: check your slip**
 #### **password: check your slip** 
 
+
+## Open the Cheatsheet
+
+In RStudio, go to `Help > Cheatsheets > R Markdown Reference Guide`
 
 ## Exercise 1: Create an R Markdown file
 
@@ -245,7 +268,6 @@ Use the paper slip on to log in to RStudio:
 4. Title it "HelloWorld"
 5. Click the save button. Save as "HelloWorld"
 6. Click "Knit Html" to see it render as an HTML file
-
 
 ## Change Your Global Chunk Option 
 
@@ -264,7 +286,7 @@ Change `output: html_document` to `output: odt_document` or `output: pdf_documen
 title: "Hello World"
 author: "Alison Blaine"
 date: "10/11/2017"
-output: word_document
+output: pdf_document
 ---
 ```
 
@@ -306,12 +328,28 @@ plot(Nile)
 
 ## Resize the plot by adding a chunk option
 
+Knit when you're finished! 
+
 ![](images/figplot.png)
 ```{r fig.width=5, fig.height=5, echo=FALSE}
 plot(Nile)
 ```
 
-## Convert Your Document to a Slide Presentation
+## Add a Floating Table of Contents
+
+```
+---
+title: "Measuring Nile Flow"
+author: "Your Name Here"
+date: "October 24, 2017"
+output: 
+    html_document: 
+      toc: true
+      toc_float: true
+---
+```
+
+## Convert Your Document into a Slide Presentation
 Pandoc will allow you to convert your html file into a slide presentation.
 
 Here are some slide presentation types you can create in RStudio:
@@ -323,35 +361,21 @@ Here are some slide presentation types you can create in RStudio:
 
 
 ## Example
-In the header of HelloWorld.Rmd, change output type to "slidy_presentation" and knit the document
+In the header of Nile.Rmd, change output type to "ioslides_presentation" and knit the document
 
 ```
 ---
 title: "Measuring Nile Flow"
 author: "Your Name Here"
 date: "October 24, 2017"
-output: slidy_presentation
+output: ioslides_presentation
 ---
 
-```
-
-## Styling your Slides
-* You can add a [CSS (Cascading Style Sheet)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) file to your project if you want to change the styling of your Slide presentation.
-* The CSS file must be included in your project directory and named in the header.
-* You can also specify presentation size and text size in the header.
-* Beamer only renders slides in PDF. [Lots of themes](https://www.sharelatex.com/learn/Beamer#/Themes_and_colorthemes) are available.
-
-```
- ---
- output: 
-   slidy_presentation:
-      css: styles.css
----
 ```
 
 ## Including Shiny in R Markdown
 * Shiny is an R framework for creating interactive web applications.
-* Shiny applications can be embedded into an R markdown file, or exist as stand-alone applications.
+* Shiny widgets and apps can be embedded into an R markdown file, or exist as stand-alone applications.
 * Lots of tutorials exist for creating Shiny applications or Shiny widgets embedded in R Markdown documents.
 
 Here are some good ones:
