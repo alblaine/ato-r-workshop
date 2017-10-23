@@ -29,7 +29,6 @@ plot(Nile)
 
 ## Distribution
 
-
 ```{r fig.height=4, fig.width=3, echo=FALSE}
 
 # create dropdown selector for histogram

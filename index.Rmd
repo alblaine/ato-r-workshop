@@ -13,7 +13,6 @@ output:
 knitr::opts_chunk$set(echo = FALSE, fig.width = 4, fig.height = 3)
 ```
 
-
 ## Hands-On Session 
 **Look for the hand!**  
 
@@ -25,7 +24,39 @@ You should have a paper slip on your seat with a URL and login information to an
 
 ### **URL: check your slip**  
 #### **username: check your slip**
-#### **password: check your slip**  
+#### **password: check your slip** 
+
+## About Me
+![](images/hill.png)
+
+* work at NCSU Libraries
+* Digital Library Initiatives - [github.com/ncsu-libraries](https://github.com/ncsu-libraries)
+* statistical computing, visualization & software projects
+* develop and teach workshops
+* we have lots of R Users who need to publish
+
+## Old Model of a Research Document
+
+A document and its elements as static entities: 
+
+* document
+* figures
+* data tables 
+* appendices
+
+## New Model: Dynamic Research Document 
+
+* A document where everything is contained that you need to re-run the experiment or models that produced the data. Including the code. 
+
+* A document that is not siloed in a particular tool (Word doc) but can be easily converted to other types.
+
+* A document that can contain interactive visualizations and embedded apps.
+
+* A document that could be its own web app, github page, or slide presentation.
+
+## Wouldn't it be Cool if...
+
+You could use the same open-source tool for your data cleaning, analysis and publishing?
 
 ## What is R? 
 
@@ -33,7 +64,8 @@ R is a programming language for statistical computing and graphics.
 
 * New Zealand
 * created by statisticians named **Ross** and **Robert** 
-* well, data science
+* robust user community 
+* relative obscurity in early 2000s --> top languages for data science today
 
 ![](images/Rlogo.png)
 
@@ -43,7 +75,6 @@ Base R is extended by packages that can be imported into R. Currently there are 
 Find packages at [RDocumentation.org](http://RDocumentation.org)
 
 ![](images/packages.png)
-
 
 ## R Studio {.smaller}
 ![](images/rstudio.png)
@@ -87,6 +118,22 @@ In an R Markdown file, you can include:
 * LaTeX
 * mathjax  
 * code chunks in other languages  
+
+```
+## R Markdown Lets Us Have Nice Things
+
+<img style="float: right;" src="images/RMarkdownOutputFormats.png">
+
+One .Rmd file --> many types of documents:
+
+- HTML files / websites
+- PDF
+- Microsoft Word
+- Interactive documents (Shiny apps)
+- Slide presentations
+- Books
+- Journal articles
+```
 
 ## R packages for document creation
 
@@ -147,6 +194,20 @@ output:
     toc: true
     toc_float: true
     number_sections: true
+---
+```
+
+## Header for this Presentation
+```
+---
+title: "R Markdown for Publishing Documents"
+author: "Alison Blaine"
+date: "NCSU Libraries"
+output: 
+  revealjs::revealjs_presentation:
+    theme: blood
+    highlight: zenburn
+    transition: slide
 ---
 ```
 ## Code chunks
@@ -290,7 +351,7 @@ output: pdf_document
 ---
 ```
 
-## Open Nile.Rmd file
+## Exercise 2: Open Nile.Rmd file
 
 ![](images/addtext.png)
 
@@ -335,6 +396,16 @@ Knit when you're finished!
 plot(Nile)
 ```
 
+## Create a new section 
+
+``` 
+## Distribution
+```
+## Add a Histogram 
+```{r echo=TRUE}
+hist(Nile)
+```
+
 ## Add a Floating Table of Contents
 
 ```
@@ -352,17 +423,6 @@ output:
 ## Convert Your Document into a Slide Presentation
 Pandoc will allow you to convert your html file into a slide presentation.
 
-Here are some slide presentation types you can create in RStudio:
-
-* ioslides_presentation
-* slidy_presentation
-* Beamer (PDF output) - requires a LaTex installation
-* RevealJS - requires installing the "revealjs" package
-
-
-## Example
-In the header of Nile.Rmd, change output type to "ioslides_presentation" and knit the document
-
 ```
 ---
 title: "Measuring Nile Flow"
@@ -370,7 +430,6 @@ author: "Your Name Here"
 date: "October 24, 2017"
 output: ioslides_presentation
 ---
-
 ```
 
 ## Including Shiny in R Markdown
@@ -383,7 +442,7 @@ Here are some good ones:
 * [Shiny R Studio tutorial](https://shiny.rstudio.com/articles/interactive-docs.html)
 * [How to Build a Shiny App](http://shiny.rstudio.com/tutorial/)
 
-## Open Shiny_Nile.Rmd
+## Exercise 3: Open Shiny_Nile.Rmd
 File > New File > R Markdown > Shiny > Shiny Document
 
 `output: html_document`  
@@ -411,3 +470,57 @@ hist(Nile, xlab= "Measurement", probability = TRUE, breaks = as.numeric(input$n_
 
 Run the document. The histogram will update when a new value is selected from the dropdown menu.
 
+## Creating a Static Site
+
+To create a static website with R Markdown, you the following files: 
+
+- _site.yml
+- an .Rmd file for every page
+
+![](images/website.png)
+
+## Rendering Your Website
+
+Inside directory that contains _site.yml and index.Rmd, you can run: 
+
+`rmarkdown::render_site()`
+
+## Exercise 4: Open _site.yml file
+
+Add resume.html
+
+```
+---
+name: "my-website"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About Me"
+      href: about.html
+    - text: "Resume"
+      href: resume.html
+---
+```
+
+## Create resume.html .Rmd file
+
+```
+---
+Your Name   
+Address  
+Contact Info  
+<hr>
+
+##### Education
+
+##### Work Experience 
+---
+```
+## Render the site
+Make sure you're in the website directory
+
+Type `rmarkdown::render_site()` in the console
+
+![](images/rendersite.png)
