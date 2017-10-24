@@ -1,5 +1,8 @@
 ## R for Document Creation Workshop
 
-This repository contains the files for the "R Markdown for Publishing Documents," a workshop I created on using R Markdown to create documents. 
+This repository contains the files for the "R Markdown for Publishing Documents," a session at [All Things Open 2017](https://allthingsopen.org/). 
 
-[See the project page](https://alblaine.github.io/ato-r-workshop) for the slides.
+### Materials 
+* [Slides](https://alblaine.github.io/ato-r-workshop)
+* [Handout](https://github.com/alblaine/ato-r-workshop/blob/master/handout.md) -- essentially the slide content as a handout
+
