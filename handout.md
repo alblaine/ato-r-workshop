@@ -499,7 +499,7 @@ Run the document. The histogram will update when a new value is selected from th
 Creating a Static Site
 ----------------------
 
-To create a static website with R Markdown, you the following files:
+To create a static website with R Markdown, you need the following files:
 
 -   \_site.yml
 -   an .Rmd file for every page

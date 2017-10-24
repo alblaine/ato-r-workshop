@@ -2,7 +2,7 @@
 title: "Measuring Nile Flow"
 author: "Your Name Here"
 date: "October 24, 2017"
-output: ioslides_presentation
+output: html_document
 ---
 
 <!-- this code chunk is for setting global chunk options. --> 
@@ -21,15 +21,15 @@ summary(Nile)
 
 <!-- add stuff here -->
 ## Flow over Time
-```{r}
+
+```{r fig.height=3, fig.width=4}
 plot(Nile)
 ```
 
-## Distribution 
-```{r}
+## Distribution
+
+```{r fig.height=3, fig.width=4}
 hist(Nile)
 ```
-
-
 
 
