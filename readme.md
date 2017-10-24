@@ -1,4 +1,4 @@
-## R for Document Creation Workshop
+## R for Publishing Documents
 
 This repository contains the files for the "R Markdown for Publishing Documents," my session at [All Things Open 2017](https://allthingsopen.org/). 
 
